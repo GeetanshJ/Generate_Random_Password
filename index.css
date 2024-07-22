@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    border: 2px solid blue;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+}
+
+h1 {
+    color: blue;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+}
+
+.input-section {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: blue;
+    transition: color 0.3s;
+}
+
+input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid blue;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="password"]:focus {
+    border-color: darkblue;
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.3);
+}
+
+button {
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+#validationResult p {
+    margin: 5px 0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgb(255, 0, 0);
+}
+
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: red;
+}
+
+#validationResult p:before {
+    content: '❌';
+    color: red;
+}
+
+#validationResult p.valid:before {
+    content: '✔️';
+    color: green; 
+}
+
+#validationResult p.valid {
+    content: '✔️';
+    color: green; 
+}
+
+.theme-dark {
+    background-color: black;
+    border-color: white;
+}
+
+.theme-dark .container {
+    background-color: black;
+    border-color: white;
+}
+
+.theme-dark h1,
+.theme-dark label,
+.theme-dark button {
+    color: white;
+}
+
+.theme-dark input[type="password"] {
+    border-color: white;
+}
+
+.theme-dark input[type="password"]:focus {
+    border-color: gray;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.theme-dark button {
+    background-color: white;
+    color: black;
+}
+
+.theme-dark button:hover {
+    background-color: gray;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.theme-transition {
+    animation: slideDown 1s ease-out;
+}
